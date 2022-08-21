@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewBag.Title = "RemoveData";
+}
+
+<h2>Delete</h2>
+
+<div class="well-sm">
+    <h3>Add Student Details</h3>
+</div>
+
+@{ var result = "";
+    var tempTotal = 0;
+    if (IsPost)
+    {
+        var number1 = Request["Number01"];
+        var number2 = Request["Number02"];
+        var number3 = Request["Number03"];
+        var number4 = Request["Number04"];
+        var number5 = Request["Number05"];
+        var number6 = Request["Number06"];
+
+
+        var number7= Request["Number07"];
+        var number8 = Request["Number08"];
+        var number9 = Request["Number09"];
+
+
+        var total = number1.AsInt()
++ number2.ToString()
++ number3.ToString()
++ number4.ToString()
++ number5.AsInt()
++ number6.AsInt()
++ number7.ToString()
++ number8.ToString()
++number9.AsInt();
+
+        var tempData = number1 + ","
+            + number2 + ","
+            + number3 + ","
+            + number4 + ","
+            + number5 + ","
+            + number6 + ","
+            + number7 + ","
+            + number8 + ","
+            + number9 + ","
+            + Environment.NewLine;
+
+
+        var dataFile = Server.MapPath("~/App_Data/tempData.txt");
+        //File.Remove(dataFile);
+        //result = "Information saved.";
+        ////tempTotal = total;
+        ///
+
+
+    }
+    }
+
+
+<script>
+
+    const element = document.getElementsByClassName('#row');
+    element.remove();
+</script>
+<div class="well-sm">
+    <form id="form1" method="post">
+        <div>
+            <table>
+                <tr>
+                    <td><p>&nbsp;ID Number :&nbsp;</p></td>
+                    <td><p><input class="row" id="num01" name="Number01" type="number" /></p></td>
+                </tr>
+
+                <tr>
+                    <td><p>&nbsp;Name :&nbsp;</p></td>
+                    <td><p><input class="row" id="num02" name="Number02" type="text" /></p></td>
+                </tr>
+
+                <tr>
+                    <td><p>&nbsp;Surname :&nbsp;</p></td>
+                    <td><p><input class="row" id="num03" name="Number03" type="text" /></p></td>
+                </tr>
+
+                <tr>
+                    <td><p>&nbsp;Email :&nbsp;</p></td>
+                    <td><p><input class="row" id="num04" name="Number04" type="text" /></p></td>
+                </tr>
+
+                <tr>
+                    <td><p>&nbsp;Cell Number :&nbsp;</p></td>
+                    <td><p><input class="row" id="num05" name="Number05" type="number" /></p></td>
+                </tr>
+
+                <tr>
+                    <td><p>&nbsp;Grade Average:&nbsp;</p></td>
+                    <td><p><input class="row" id="num06" name="Number06" type="number" /></p></td>
+                </tr>
+
+                <tr>
+                    <td><p>&nbsp;Degree :&nbsp;</p></td>
+                    <td><p><input class="row" id="num07" name="Number07" type="text" /></p></td>
+                </tr>
+
+                <tr>
+                    <td><p>&nbsp;Funder:&nbsp;</p></td>
+                    <td><p><input class="row" id="num08" name="Number08" type="text" /></p></td>
+                </tr>
+
+                <tr>
+                    <td><p>&nbsp;Amount:&nbsp;</p></td>
+                    <td><p><input class="row" id="num09" name="Number09" type="number" /></p></td>
+                </tr>
+                @*bootstrap buttons*@
+
+                <tr>
+                    <td><p>&nbsp;</p></td>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </tr>
+            </table>
+        </div>
+        <div>
+            @if (result != "")
+            {
+                
+                <p>Successfully deleted student</p>}
+        </div>
+    </form>
+</div>
